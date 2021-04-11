@@ -40,8 +40,8 @@ const FormSignUp = () => {
       <FormControlWrapper>
         <Input error="Есть ошибка!" />
         <Input
-          icon={<FontAwesomeIcon icon={faEnvelope} />} type="text"/>
-        <Input icon={<FontAwesomeIcon icon={faLock} />} type="password"/>
+          icon={<FontAwesomeIcon icon={faEnvelope} />} type="text" />
+        <Input icon={<FontAwesomeIcon icon={faLock} />} type="password" />
         <Select>
           <SelectOption value="1">Россия</SelectOption>
           <SelectOption value="2">Германия</SelectOption>

@@ -8,8 +8,8 @@ const StyledOption = styled.option`
   margin: 0 20px
 `
 
-const SelectOption = ({children, ...props}) => {
-    return <StyledOption>{children}</StyledOption>
+const SelectOption = ({ children, ...props }) => {
+  return <StyledOption>{children}</StyledOption>
 }
 
-export default SelectOption 
+export default SelectOption
