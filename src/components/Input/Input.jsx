@@ -34,15 +34,15 @@ const Error = styled.p`
   color: #e82B28;
 `
 
-const Input = ({icon, error,  ...props}) => {
+const Input = ({ icon, error, ...props }) => {
   return (
-      <InputWrapper>
-        <FieldWrapper>
+    <InputWrapper>
+      <FieldWrapper>
         {icon && <IconWrapper>{icon}</IconWrapper>}
-        <input type="text" {...props}/>
-        </FieldWrapper>
-        {error && <Error>{error}</Error>}
-      </InputWrapper>  
+        <input type="text" {...props} />
+      </FieldWrapper>
+      {error && <Error>{error}</Error>}
+    </InputWrapper>
   )
 }
 

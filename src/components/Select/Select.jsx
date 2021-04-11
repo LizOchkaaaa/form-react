@@ -1,8 +1,8 @@
-import React , { useMemo , useState} from 'react'
+import React, { useMemo, useState } from 'react'
 import styled from 'styled-components/macro'
-import {InputWrapper, FieldWrapper} from '../Input/Input'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome' 
-import {faAngleDown} from '@fortawesome/free-solid-svg-icons'
+import { InputWrapper, FieldWrapper } from '../Input/Input'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import SelectOption from '../SelectOption/SelectOption'
 
 const ComponentWrapper = styled(InputWrapper)`
@@ -35,33 +35,33 @@ const ListWrapper = styled.div`
   box-shadow: 0px 3px 8px #00000026;
 `
 
-const Select = ({ children, ...props}) => {
-    const [isOpen , setIsOpen] = useState(false)
-    const [valueOfSelect, setValueOfSelect] = useState(undefined)
+const Select = ({ children, ...props }) => {
+  const [isOpen, setIsOpen] = useState(false)
+  const [valueOfSelect, setValueOfSelect] = useState(undefined)
 
-    const toggleSelect = () => setIsOpen(!isOpen)
-    
-    const options = useMemo(
-      () =>
+  const toggleSelect = () => setIsOpen(!isOpen)
+
+  const options = useMemo(
+    () =>
       children.map((child) => (
-        <SelectOption {...child.props} key = {child.props.value} onClick= {() => setValueOfSelect(child.props.value)}>
+        <SelectOption {...child.props} key={child.props.value} onClick={() => setValueOfSelect(child.props.value)}>
           {child.props.children}
         </SelectOption>
       )),
-      [children]
-    )
+    [children]
+  )
 
-    return (
-        <ComponentWrapper>
-            <SelectWrapper onClick= {toggleSelect}>
-                <input {...props} value ={valueOfSelect} type="text" placeholder="Select country" readOnly/>
-                <ArrowWrapper open={isOpen}>
-                    <FontAwesomeIcon icon={faAngleDown}/>
-                </ArrowWrapper>
-            </SelectWrapper>
-            <ListWrapper isVisible= {isOpen}>{options}</ListWrapper>
-        </ComponentWrapper>
-    )
+  return (
+    <ComponentWrapper>
+      <SelectWrapper onClick={toggleSelect}>
+        <input {...props} value={valueOfSelect} type="text" placeholder="Select country" readOnly />
+        <ArrowWrapper open={isOpen}>
+          <FontAwesomeIcon icon={faAngleDown} />
+        </ArrowWrapper>
+      </SelectWrapper>
+      <ListWrapper isVisible={isOpen}>{options}</ListWrapper>
+    </ComponentWrapper>
+  )
 }
 
 export default Select
